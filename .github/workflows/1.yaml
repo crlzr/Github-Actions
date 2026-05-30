@@ -4,12 +4,14 @@ jobs:
   job_1:
     name: Name of Job 1
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: Set up NodeJS
-      uses: actions/setup-node@v4
-      with:
-        node-version: "20"
+      - name: Print hello.js file
+        run: cat hello.js
