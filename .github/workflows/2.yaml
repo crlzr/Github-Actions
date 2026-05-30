@@ -1,0 +1,24 @@
+name: Github Actions Input practice
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environments to deploy to
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      version:
+        description: Version
+        required: false
+        default: no
+        type: string
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: echo "${{ inputs.environment }} to ${{ inputs.version }}"
