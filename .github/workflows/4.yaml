@@ -1,0 +1,19 @@
+name: Job Outputs Practice
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version_value.outputs.version }}
+
+    steps:
+      - id: version_value
+        run: echo "version=1.0.0" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Print version
+        run: echo ${{ needs.build.outputs.version }}
