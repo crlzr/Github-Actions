@@ -12,7 +12,7 @@ on:
           - prod
       version:
         description: Version
-        required: false
+        required: true
         default: no
         type: string
 jobs:
