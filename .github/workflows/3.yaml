@@ -1,0 +1,12 @@
+name: Github Actions Output Practice
+on: push
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: message
+        run: echo "message=Hello from step 1" >> $GITHUB_OUTPUT
+
+      - name: Reads value from step 1
+        run: echo ${{ steps.message.outputs.message }}
