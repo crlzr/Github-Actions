@@ -1,8 +1,9 @@
 name: Basic Github Actions syntax practice
 on: push
 jobs:
-  Name of job 1:
-  runs-on: ubuntu-latest
+  job_1:
+    name: Name of Job 1
+    runs-on: ubuntu-latest
 
   steps:
     - name: Checkout Code
