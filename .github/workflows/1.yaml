@@ -1,0 +1,14 @@
+name: Basic Github Actions syntax practice
+on: push
+jobs:
+  Name of job 1:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
