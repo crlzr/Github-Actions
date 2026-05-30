@@ -1,12 +1,11 @@
-name: Github Actions Output Practice
+name: Outputs Github Action Practice
 on: push
 jobs:
   demo:
     runs-on: ubuntu-latest
 
     steps:
-      - id: message
-        run: echo "message=Hello from step 1" >> $GITHUB_OUTPUT
-
-      - name: Reads value from step 1
-        run: echo ${{ steps.message.outputs.message }}
+      - id: value_storage
+        run: echo "message=Hello from Step 1" >> $GITHUB_OUTPUT
+      - name: Output the message
+        run: echo "${{ steps.value_storage.outputs.message }}"
