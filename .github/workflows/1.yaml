@@ -1,4 +1,5 @@
 name: Basic Github Actions syntax practice
+run-name: cat {{ github.actor }}
 on: push
 jobs:
   job_1:
