@@ -1,0 +1,12 @@
+name: Secrets
+on: workflow_dispatch
+
+jobs:
+  api_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get secret and send API request
+        env:
+          SECRET_KEY: ${{ secrets.API_KEY }}
+        run: echo $SECRET_KEY
