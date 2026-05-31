@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get secret and send API request
+      - name: Get secret and print it
         env:
           SECRET_KEY: ${{ secrets.API_KEY }}
         run: echo $SECRET_KEY

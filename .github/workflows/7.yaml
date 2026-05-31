@@ -1,0 +1,27 @@
+name: Inputs, Outputs, Secrets
+on:
+  workflow_dispatch:
+    inputs:
+      version-number:
+        type: string
+jobs:
+  ## Expose the step output to other jobs
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: "${{steps.take_input_version_number.outputs.version}}"
+
+    steps:
+      - id: take_input_version_number
+        run: echo "version=${{ inputs.version_number }}-build" >> $GITHUB_OUTPUT
+
+  ## reads the output and uses it
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Read version output from build job
+        env:
+          SECRET_KEY: ${{ API_KEY }}
+        run: "$SECRET_KEY accessed successfully & ${{ needs.build.outputs.version }}"
