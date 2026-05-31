@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - id: set_version
-        run: echo "version=${{ inputs.version_number }}"" >> $GITHUB_OUTPUT
+        run: echo "version=${{ inputs.version_number }}" >> $GITHUB_OUTPUT
