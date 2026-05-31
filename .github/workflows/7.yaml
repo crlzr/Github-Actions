@@ -23,5 +23,5 @@ jobs:
     steps:
       - name: Read version output from build job
         env:
-          SECRET_KEY: ${{ API_KEY }}
+          SECRET_KEY: ${{ secrets.API_KEY }}
         run: "$SECRET_KEY accessed successfully & ${{ needs.build.outputs.version }}"
