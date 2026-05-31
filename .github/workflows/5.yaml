@@ -1,0 +1,16 @@
+name: Inputs, Outputs practice
+on:
+  workflow_dispatch:
+    inputs:
+      version_number:
+        type: string
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
+
+    steps:
+      - id: set_version
+        run: echo "version=${{ inputs.version_number }}"" >> $GITHUB_OUTPUT
