@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node -e \"const fs=require('fs'); const path=require('path'); fs.mkdirSync('dist',{recursive:true}); fs.copyFileSync(path.join(process.cwd(),'hello.js'), path.join(process.cwd(),'dist','hello.js')); console.log('Built: dist/hello.js');\""
   },
   "repository": {
     "type": "git",
