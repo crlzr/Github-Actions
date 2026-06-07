@@ -2,10 +2,10 @@ name: Use JavaScript action
 on: push
 jobs:
   use-js:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout action
-      uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v4
 
-    - name: Run JS action
-      uses: ./JS-custom-action
+      - name: Run JS action
+        uses: ./JS-custom-action
