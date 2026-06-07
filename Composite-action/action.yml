@@ -1,0 +1,7 @@
+name: My composite action
+description: This is just a test for a composite action structured file
+runs:
+  using: "composite"
+  steps:
+    - name: Say hello
+      run: echo 'Hello from my composite action'

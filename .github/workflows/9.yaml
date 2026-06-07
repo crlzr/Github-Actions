@@ -1,4 +1,4 @@
-name: Use JavaScript action
+name: Use action.yml files
 on: push
 jobs:
   use-js:
@@ -9,3 +9,12 @@ jobs:
 
       - name: Run JS action
         uses: ./JS-custom-action
+
+  use-composite:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v4
+
+      - name: Run composite action
+        uses: ./Composite-action
