@@ -1,0 +1,5 @@
+name: JavaScript action
+description: This is a JS test file
+runs:
+  using: "node20"
+  main: "main.js"
